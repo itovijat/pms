@@ -19,13 +19,13 @@
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
+        <script src="js/dt.js"></script>
 
         <script>
   
 // Refresh Rate is how often you want to refresh the page 
 // bassed off the user inactivity. 
-var refresh_rate = 100; //<-- In seconds, change to your needs
+var refresh_rate = 100000; //<-- In seconds, change to your needs
 var last_user_action = 0;
 var has_focus = false;
 var lost_focus_count = 0;
@@ -79,7 +79,7 @@ function windowLostFocus() {
 setInterval(function() {
     last_user_action++;
     refreshCheck();
-    if (last_user_action > 2) {
+    if (last_user_action > 20) {
         updateVisualTimer();
     }
 }, 1000);

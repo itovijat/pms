@@ -33,7 +33,7 @@ if ($_SESSION['email']=="" OR $_SESSION['role']!="admin"){
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark d-print-none">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="index.html">PMS</a>
         <!-- Sidebar Toggle-->
@@ -73,7 +73,7 @@ if ($_SESSION['email']=="" OR $_SESSION['role']!="admin"){
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion d-print-none">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
 

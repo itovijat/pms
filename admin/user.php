@@ -135,7 +135,7 @@ if(isset($_REQUEST['btn'])){
 
 
 
-    <div class="row mt-4">
+    <div class="row mt-4 d-print-none">
         <div class="col-xl-10  col-12">
             <div class=" mb-4">
                 <h1 class="">User</h1>
@@ -146,7 +146,7 @@ if(isset($_REQUEST['btn'])){
 
 
 
-            <button id="myBtn" class=" btn btn-success float-end">+ Add New</button>
+            <button id="myBtn" class=" btn btn-success float-end d-print-none">+ Add New</button>
 
 
 
@@ -167,7 +167,7 @@ echo "
 }?>
 
     <!-- The Modal -->
-    <div id="myModal" class="modal">
+    <div id="myModal" class="modal d-print-none">
 
         <!-- Modal content -->
         <div class="modal-content">
@@ -297,13 +297,13 @@ document.getElementById('myModal').style.display = 'block';
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            From Cloud Database
+            User List : 
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>Action</th>
+                        <th class="d-print-none">Action</th>
                         <th>Email</th>
                         <th>Role</th>
                         <th>Company</th>
@@ -314,7 +314,7 @@ document.getElementById('myModal').style.display = 'block';
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Action</th>
+                        <th class="d-print-none">Action</th>
 
                         <th>Email</th>
                         <th>Role</th>
@@ -333,9 +333,9 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr>
+        echo "<tr >
 
-                        <td><a href='user.php?edit=". $row["email"]."'><i class='fas fa-edit'></i></a> <a href='user.php?del=". $row["email"]."'><i style='margin-left:20px;'
+                        <td class='d-print-none'><a href='user.php?edit=". $row["email"]."'><i class='fas fa-edit'></i></a> <a href='user.php?del=". $row["email"]."'><i style='margin-left:20px;'
                                     class='fas fa-trash'></i></a></td>
                     
                         <td>". $row["email"]. "</td>
