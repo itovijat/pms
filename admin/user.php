@@ -43,7 +43,7 @@ if(isset($_REQUEST['btn'])){
       
       <script>
   alert('Saved');
-  window.location.replace('user.php');
+  window.location.replace('".basename($_SERVER['PHP_SELF'])."');
   
       </script>
       
@@ -58,7 +58,7 @@ if(isset($_REQUEST['btn'])){
       
     <script>
   alert('Failed');
-  window.location.replace('user.php');
+  window.location.replace('".basename($_SERVER['PHP_SELF'])."');
     </script>
     
     
@@ -157,10 +157,7 @@ if(isset($_REQUEST['btn'])){
 
     <?php
 if(isset($_REQUEST['edit'])){
-echo "
- <option>Block</option>
 
-";
 
 
 
@@ -217,10 +214,7 @@ echo "
 
                                 <?php
 if(isset($_REQUEST['edit'])){
-echo "
- <option>Block</option>
 
-";
 
 
 
@@ -335,7 +329,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "<tr >
 
-                        <td class='d-print-none'><a href='user.php?edit=". $row["email"]."'><i class='fas fa-edit'></i></a> <a href='user.php?del=". $row["email"]."'><i style='margin-left:20px;'
+                        <td class='d-print-none'><a href='".basename($_SERVER['PHP_SELF'])."?edit=". $row["email"]."'><i class='fas fa-edit'></i></a> <a href='".basename($_SERVER['PHP_SELF'])."?dea=". $row["email"]."'><i style='margin-left:20px;' class='fas fa-ban'></i></a> <a href='".basename($_SERVER['PHP_SELF'])."?del=". $row["email"]."'><i style='margin-left:20px;'
                                     class='fas fa-trash'></i></a></td>
                     
                         <td>". $row["email"]. "</td>
@@ -355,7 +349,6 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 ?>
-
 
 
 
